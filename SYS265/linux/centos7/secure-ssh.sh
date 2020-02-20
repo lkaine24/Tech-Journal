@@ -3,6 +3,7 @@
 #author lkaine24
 #creates a new ssh user using $1 parameter
 #adds a public key from the llocal repo or curled from the remote repo
+#removes roots ability to ssh in
 user=$1
 useradd -m -d /home/$user -s /bin/bash $user
 mkdir /home/$user/.ssh
