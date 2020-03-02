@@ -1,0 +1,18 @@
+---
+  - hosts: prometheus
+    become: true
+    vars:
+      install_utilities: true
+      firewalld_enable: true
+      prometheus_group: prometheus
+      prometheus_user: prometheus
+      prometheus_path_install: /opt/prometheus
+      prometheus_path_log: /var/log/prometheus
+      prometheus_path_pid: /var/run/prometheus
+      prometheus_path_data: /var/lib/prometheus
+      prometheus_components: [prometheus]
+      prometheus_version: 1.7.1
+      prometheus_service_name: prometheus
+      prometheus_listen_port: 9090
+    roles:
+      - lrk.prometheus
