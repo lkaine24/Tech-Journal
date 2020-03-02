@@ -1,0 +1,12 @@
+[prometheus]
+ansible1-lucas
+[webmin]
+ansible2-lucas
+[windows]
+mgmt01-lucas
+[windows:vars]
+ansible_user=lucas.kaine-adm@lucas.local
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=ntlm
+ansible_winrm_port=5986
