@@ -88,7 +88,7 @@ set high-availability vrrp group SEC440-WAN vrid '20'
 
 ## Port Forwarding
 
-- Create nat destination rules for SSH and HTTP
+- Create nat destination rules for HTTP
 
 ```
 set nat destination rule 10 description 'Port Forwarding HTTP from WAN to Web01'
@@ -100,7 +100,10 @@ set nat destination rule 10 inbound-interface 'eth0'
 set nat destination rule 10 protocol 'tcp'
 
 set nat destination rule 10 translation address '10.0.5.100'
+```
 
+- Create nat destination rules for SSH
+```
 set nat destination rule 20 description 'Port Forwarding SSH from WAN to Web01'
 
 set nat destination rule 20 destination port '22'
