@@ -8,6 +8,8 @@
 
 - eth2 is 10.0.6.1/24
 
+![image](https://user-images.githubusercontent.com/54637271/131581945-e928e311-3476-4025-821d-f5c057b030cd.png)
+
 ## Initial Configuration
 
 - Set interface addresses and descriptions
