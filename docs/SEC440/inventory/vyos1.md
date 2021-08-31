@@ -28,6 +28,13 @@ set interfaces ethernet eth2 address '10.0.6.1/24'
 set interfaces ethernet eth2 description 'OPT'
 ```
 
+- Set hostname and name server
+```
+set system host-name 'vyos2-lucas'
+
+set system name-server '10.0.17.2'
+```
+
 - Create nat source rules for masquerading
 
 ```
@@ -115,6 +122,11 @@ set nat destination rule 20 inbound-interface 'eth0'
 set nat destination rule 20 protocol 'tcp'
 
 set nat destination rule 20 translation address '10.0.5.100'
+```
+
+- Set SSH listener to WAN virtual IP
+```
+set service ssh listen-address '10.0.5.1'
 ```
 
 ## Configuration File
