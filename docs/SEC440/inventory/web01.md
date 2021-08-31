@@ -1,8 +1,10 @@
-# Networking
+# web01
+
+## Networking
 
 - ens192 is 10.0.5.100
 
-# Install Google PAM
+## Install Google PAM
 
 ```
 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -10,13 +12,13 @@ sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noa
 sudo yum install google-authenticator
 ```
 
-# Run google-authenticator
+## Run google-authenticator
 
 ```
 google-authenticator
 ```
 
-# Answer prompts
+## Answer prompts
 
 ```
 Do you want authentication tokens to be time-based (y/n) y
@@ -30,7 +32,7 @@ By default, tokens are good for 30 seconds. In order to compensate for possible 
 If the computer that you are logging into isn't hardened against brute-force login attempts, you can enable rate-limiting for the authentication module. By default, this limits attackers to no more than 3 login attempts every 30s. Do you want to enable rate-limiting (y/n) y
 ```
 
-# Configure SSH
+## Configure SSH
 
 - Open the following file with a text editor
 
@@ -46,6 +48,6 @@ If the computer that you are logging into isn't hardened against brute-force log
 
 ![image](https://user-images.githubusercontent.com/54637271/131584209-577c0adc-6aea-41e8-9f70-96e7c0b669a4.png)
 
-# Restart SSH
+## Restart SSH
 
 `sudo systemctl restart sshd.service`
