@@ -131,4 +131,4 @@ set service ssh listen-address '10.0.5.1'
 ```
 
 ## Configuration File
-[vyos1.week1.txt](https://github.com/lkaine24/Tech-Journal/blob/master/docs/SEC440/vyos/vyos1.week1.txt)
+[vyos2.week1.txt](https://github.com/lkaine24/Tech-Journal/blob/master/docs/SEC440/vyos/vyos2.week1.txt)
