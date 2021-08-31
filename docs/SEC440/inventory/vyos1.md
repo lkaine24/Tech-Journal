@@ -1,6 +1,6 @@
 # vyos1
 
-**Networking**
+## Networking
 
 - eth0 is 10.0.17.53/24
 
@@ -8,7 +8,7 @@
 
 - eth2 is 10.0.6.1/24
 
-**Initial Configuration**
+## Initial Configuration
 
 - Set interface addresses and descriptions
 
@@ -56,7 +56,7 @@ set service dns forwarding listen-address '10.0.5.1'
 set service dns forwarding listen-address '10.0.17.113'
 ```
 
-**Create VRRP groups for redundancy**
+## Create VRRP groups for redundancy
 
 - LAN
 
@@ -86,7 +86,7 @@ set high-availability vrrp group SEC440-WAN virtual-address '10.0.17.113/24'
 set high-availability vrrp group SEC440-WAN vrid '20'
 ```
 
-**Port Forwarding**
+## Port Forwarding
 
 - Create nat destination rules for SSH and HTTP
 
@@ -112,5 +112,5 @@ set nat destination rule 20 protocol 'tcp'
 set nat destination rule 20 translation address '10.0.5.100'
 ```
 
-**Configuration File**
+## Configuration File
 [vyos1.week1.txt](https://github.com/lkaine24/Tech-Journal/blob/master/docs/SEC440/vyos/vyos1.week1.txt)
