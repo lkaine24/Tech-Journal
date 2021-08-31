@@ -1,3 +1,0 @@
-# vyos1
-
-**Networking**
