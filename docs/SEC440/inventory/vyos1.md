@@ -12,7 +12,7 @@
 
 - Set interface addresses and descriptions
 
-`
+```
 set interfaces ethernet eth0 address '10.0.17.23/24'
 
 set interfaces ethernet eth0 description 'WAN'
@@ -24,7 +24,7 @@ set interfaces ethernet eth1 description 'LAN'
 set interfaces ethernet eth2 address '10.0.6.1/24'
 
 set interfaces ethernet eth2 description 'OPT'
-`
+```
 
 - Create nat source rules for masquerading
 
