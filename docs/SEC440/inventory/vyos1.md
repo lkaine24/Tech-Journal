@@ -1,0 +1,93 @@
+# vyos1
+
+**Networking**
+
+- eth0 is 10.0.17.53/24
+
+- eth1 is 10.0.5.2/24
+
+- eth2 is 10.0.6.1/24
+
+**Initial Configuration**
+
+- Set interface addresses and descriptions
+
+`
+set interfaces ethernet eth0 address '10.0.17.23/24'
+
+set interfaces ethernet eth0 description 'WAN'
+
+set interfaces ethernet eth1 address '10.0.5.2/24'
+
+set interfaces ethernet eth1 description 'LAN'
+
+set interfaces ethernet eth2 address '10.0.6.1/24'
+
+set interfaces ethernet eth2 description 'OPT'
+`
+
+- Create nat source rules for masquerading
+
+`
+set nat source rule 10 description 'NAT FROM LAN to WAN'
+
+set nat source rule 10 outbound-interface 'eth0'
+
+set nat source rule 10 source address '10.0.5.0/24'
+
+set nat source rule 10 translation address 'masquerade'
+`
+
+- Set static route to gateway
+
+`
+set protocols static route 0.0.0.0/0 next-hop 10.0.17.2
+`
+
+- Set dns forwarding from WAN and LAN subnets
+
+`
+set service dns forwarding allow-from '10.0.5.0/24'
+
+set service dns forwarding allow-from '10.0.17.0/24'
+
+set service dns forwarding listen-address '10.0.5.1'
+
+set service dns forwarding listen-address '10.0.17.113'
+`
+
+**Create VRRP groups for redundancy**
+
+- LAN
+
+`
+set high-availability vrrp group SEC440-LAN interface 'eth1'
+
+set high-availability vrrp group SEC440-LAN preempt-delay '10'
+
+set high-availability vrrp group SEC440-LAN priority '200'
+
+set high-availability vrrp group SEC440-LAN virtual-address '10.0.5.1/24'
+
+set high-availability vrrp group SEC440-LAN vrid '10'
+`
+
+- WAN
+
+`
+set high-availability vrrp group SEC440-WAN interface 'eth0'
+
+set high-availability vrrp group SEC440-WAN preempt-delay '10'
+
+set high-availability vrrp group SEC440-WAN priority '200'
+
+set high-availability vrrp group SEC440-WAN virtual-address '10.0.17.113/24'
+
+set high-availability vrrp group SEC440-WAN vrid '20'
+`
+
+**Port Forwarding**
+
+- Create nat destination rules for SSH and HTTP
+
+
