@@ -30,7 +30,7 @@ set interfaces ethernet eth2 description 'OPT'
 
 - Set hostname and name server
 ```
-set system host-name 'vyos2-lucas'
+set system host-name 'vyos1-lucas'
 
 set system name-server '10.0.17.2'
 ```
