@@ -85,15 +85,15 @@ set high-availability vrrp group SEC440-LAN vrid '10'
 - WAN
 
 ```
-set high-availability vrrp group SEC440-WAN interface 'eth0'
+set high-availability vrrp group wangroup13 interface 'eth0'
 
-set high-availability vrrp group SEC440-WAN preempt-delay '10'
+set high-availability vrrp group wangroup13 preempt-delay '10'
 
-set high-availability vrrp group SEC440-WAN priority '100'
+set high-availability vrrp group wangroup13 priority '100'
 
-set high-availability vrrp group SEC440-WAN virtual-address '10.0.17.113/24'
+set high-availability vrrp group wangroup13 virtual-address '10.0.17.113/24'
 
-set high-availability vrrp group SEC440-WAN vrid '20'
+set high-availability vrrp group wangroup13 vrid '163'
 ```
 
 ## Port Forwarding
