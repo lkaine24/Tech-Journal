@@ -1,4 +1,4 @@
-## My role - Blue team
+## My role - Mitigation
 
 For this project, I took on the responsibility of mitigating the ransomware that Hayley created. I did this with a two pronged approach.
 
