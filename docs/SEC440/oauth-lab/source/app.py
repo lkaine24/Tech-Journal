@@ -2,14 +2,14 @@ from requests_oauthlib import OAuth2Session
 from flask import Flask, request, redirect, session, url_for
 from flask.json import jsonify
 import os
-import json
+import simplejson as json
 
 app = Flask(__name__)
 
 
 file = open("creds.json", "r")
-json = file.read()
-creds = json.loads(json)
+jsonContent = file.read()
+creds = json.loads(jsonContent)
 client_id = creds['client_id']
 client_secret = creds['client_secret']
 authorization_base_url = creds['authorization_base_url']
