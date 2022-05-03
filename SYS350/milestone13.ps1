@@ -134,7 +134,7 @@ function menu() {
     Write-Host "Snapshot [5]"
     Write-Host "Restore a Snapshot [6]"
     Write-Host "Change VM's CPU Count [7]"
-    Write-Host "Execute Remote Command [8]"
+    Write-Host "Change Network Adapter [8]"
     Write-Host ""
 
     $operation = Read-Host "Choose an option"
