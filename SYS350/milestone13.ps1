@@ -137,11 +137,9 @@ function menu() {
     Write-Host "Execute Remote Command [8]"
     Write-Host ""
 
-    $filter = Read-Host "Which VM would you like to operate on?"
-
-    Write-Host $filter
-
     $operation = Read-Host "Choose an option"
+
+    if ( $operation -ne 1 -and $operation -ne 2) {$filter = Read-Host "Which VM would you like to operate on?"}
 
     if ( 1 -eq $operation) {getinfo}
     ElseIf ( 2 -eq $operation) {extrainfo}
